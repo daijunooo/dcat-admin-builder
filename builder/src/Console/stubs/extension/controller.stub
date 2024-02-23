@@ -1,0 +1,49 @@
+<?php
+
+namespace {namespace}\Http\Controllers;
+
+use {namespace}\Models\{className};
+use Dcat\Admin\Http\Controllers\AdminController;
+use Dcat\Admin\Form;
+use Dcat\Admin\Grid;
+use Dcat\Admin\Show;
+
+/**
+ * 后台管理控制器
+ */
+class {className}Controller extends AdminController
+{
+    /**
+     * 列表
+     */
+    public function grid()
+    {
+        return Grid::make(new {className}(), function (Grid $grid) {
+            $grid->column('title', '标题');
+        });
+    }
+
+    /**
+     * 查看详情
+     */
+    public function detail($id)
+    {
+        return Show::make($id, new {className}(), function (Show $show) {
+            $show->id('ID');
+            $show->title('标题');
+            $show->content('内容');
+        });
+    }
+
+    /**
+     * 新增/编辑
+     */
+    protected function form()
+    {
+        return Form::make(new {className}(), function (Form $form) {
+            $form->text('title', '标题');
+            $form->textarea('content', '内容');
+        });
+    }
+
+}

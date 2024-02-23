@@ -1,0 +1,19 @@
+<?php
+
+namespace {namespace};
+
+use Dcat\Admin\Extend\Setting as Form;
+
+/**
+ * 应用中心的设置表单
+ */
+class Setting extends Form
+{
+    public function form()
+    {
+        $this->tab('开发配置', function ($form) {
+            $this->text('key1')->required();
+            $this->text('key2')->required();
+        });
+    }
+}

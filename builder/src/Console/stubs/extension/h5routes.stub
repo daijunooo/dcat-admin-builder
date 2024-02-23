@@ -1,0 +1,15 @@
+<?php
+
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
+
+// 前端页面路由定义，路由前缀为 {path}
+Route::group([
+    'prefix'     => '{path}',
+    'namespace'  => '{namespace}\Http\Controllers',
+    'middleware' => 'api',
+], function (Router $router) {
+
+    $router->get('index', 'H5Controller@index');
+
+});

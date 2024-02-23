@@ -1,0 +1,17 @@
+<?php
+
+namespace {namespace}\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+
+/**
+ * H5入口控制器
+ */
+class H5Controller extends Controller
+{
+    public function index()
+    {
+        return view('{package}::index');
+    }
+
+}

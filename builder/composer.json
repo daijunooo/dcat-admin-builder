@@ -1,0 +1,32 @@
+{
+    "name": "system/builder",
+    "alias": "系统 - 创建应用",
+    "description": "快速生成应用骨架代码",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension"],
+    "homepage": "https://github.com/system/builder",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tommy Dai",
+            "email": "daijunooo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "dcat/laravel-admin": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "System\\Builder\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "System\\Builder\\BuilderServiceProvider",
+        "laravel": {
+            "providers": [
+                "System\\Builder\\BuilderServiceProvider"
+            ]
+        }
+    }
+}

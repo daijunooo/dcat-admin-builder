@@ -1,0 +1,11 @@
+<?php
+
+use {namespace}\Http\Controllers;
+use Illuminate\Support\Facades\Route;
+
+/**
+ * 后台管理路由，路由前缀为 admin/{path}
+ */
+Route::prefix('{path}')->group(function ($router) {
+    $router->resource('{path}', Controllers\{className}Controller::class);
+});

@@ -1,0 +1,53 @@
+<?php
+
+namespace {namespace};
+
+
+use Dcat\Admin\Extend\ServiceProvider;
+
+class {className}ServiceProvider extends ServiceProvider
+{
+	{property}
+	protected $css = [
+		'css/index.css',
+	];
+
+    /**
+     * 安装模块时自动创建菜单
+     */
+    protected $menu = [
+        [
+            'title'  => '{namespace}',
+            'icon'   => 'fa-circle',
+        ],
+        [
+            'parent' => '{namespace}',
+            'title'  => '{namespace}1',
+            'uri'    => '{path}/{path}',
+            'icon'   => 'feather icon-file-text',
+        ],
+
+    ];
+
+
+	public function register()
+	{
+		//
+	}
+
+	public function init()
+	{
+		parent::init();
+
+        // 引入前端页面路由
+        require(__DIR__ . '/routes.php');
+
+		{registerTheme}
+	}
+
+	public function settingForm()
+	{
+		return new Setting($this);
+	}
+
+}
